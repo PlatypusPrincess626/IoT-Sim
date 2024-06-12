@@ -202,7 +202,9 @@ class sim_env:
                     sensor[0].set_head(location[2], len(clusterheadList[location[2]][1]))
                     break
 
-        
+        for CH in clusterheadList:
+            CH[0].set_sensor_data(CH[1])
+
         self.sensorTable = pd.DataFrame(sensorList)
         self.sensorTable.rename(
              columns={0:"Sensor"},
